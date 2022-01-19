@@ -1,10 +1,16 @@
 :root {
 --font-size-body: 16px;
+--font-size-body-mobile: 14px;
 --font-weight-light: 500;
 --font-weight-bold: 700;
 --font-weight-black: 900;
 
 --width-mobile: 375px;
+--width-mobile-plan: 305px;
+--width-mobile-button: 355px;
+--width-mobile-content: 300px;
+--height-mobile-figure: 160px;
+
 --width-desktop: 1440px;
 --width-plan: 305px;
 --width-button: 355px;
@@ -30,32 +36,37 @@ body {
   background-image: url("../../images/pattern-background-desktop.svg");
   background-repeat: no-repeat;
   background-position: center 0;
+  height: 100vh;
   max-width: var(--width-desktop);
   color: var(--neutral-desaturated-blue);
+  display: flex;
+  margin: auto auto;
 }
 
 .body-container {
   max-width: 450px;
   height: 700px;
-  margin: auto;
+  margin: auto auto;
   /*border: 1px solid black;*/
   border-radius: 15px;
   background-color: white;
-  align-self: center;
 }
 
 .data-container {  
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 52px;
-  padding-bottom: 52px;
+  padding: 52px 50px 52px 50px; /* top right bottom left*/
 }
 
 .top-figure {
   background-image: url("../../images/illustration-hero.svg");
   background-repeat: no-repeat;
+  background-position: center 0;
+  overflow: hidden;
   height: var(--height-figure);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 .header {
   font-size: 25px;
@@ -73,11 +84,11 @@ body {
 .plan {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 25px 25px;
+  /*justify-content: space-between;*/
+  padding: 25px 0;
   background-color: var(--neutral-very-pale-blue);
   border-radius: 10px;
-  width: var(--width-plan);
+  width: 100%;
   height: var(--height-plan);
 }
 
@@ -86,11 +97,11 @@ body {
   background-repeat: no-repeat;
   height: var(--height-icon);
   width: var(--height-icon);
+  margin-left: 25px;
 } 
 .plan-data{
-  padding-left: 17px;
-  padding-right: 88px;
-
+  margin-left: 17px;
+  margin-right: auto;
 }
 .plan-header{
   font-weight: var(--font-weight-bold);
@@ -101,6 +112,7 @@ body {
 }
 .plan-change{
   font-weight: var(--font-weight-bold);
+  margin-right: 25px;
 }
 .plan-change:hover{
   text-decoration: none;
@@ -108,7 +120,7 @@ body {
 }
 
 .button {
-  width: var(--width-button);
+  width: 100%;
   height: var(--height-button); 
   display: flex;
   align-items: center;
@@ -139,4 +151,45 @@ body {
 .cancel:hover {
   cursor: pointer;
   color: var(--neutral-dark-blue);
+}
+
+@media screen and (max-width: 400px) {
+  body {
+    max-width: var(--width-mobile);
+    font-size: var(--font-size-body-mobile);
+  }
+
+  .body-container {
+    max-width: 327px;
+    height: 567px;
+  }
+
+  .top-figure {
+    background-size: contain;
+    height: var(--height-mobile-figure);
+  }
+
+  .data-container {  
+    padding: 37px 24px 37px 24px; /* top right bottom left*/
+  }
+  .plan {
+    padding: 16px 0;
+  }
+  .plan-icon{
+    height: var(--height-icon);
+    width: var(--height-icon);
+    margin-left: 16px;
+  } 
+  .plan-data{
+    margin-left: 17px;
+    margin-right: auto;
+  }
+  .plan-change{
+    font-weight: var(--font-weight-bold);
+    margin-right: 16px;
+  }
+  .button-payment{
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
 }
