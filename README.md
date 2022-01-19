@@ -60,10 +60,6 @@ Users should be able to:
 
 ### Continued development
 
-What's left to be done:
-  - I need to fix the body container position.
-  - I need to finish the mobile version.
-
 What I want to improve:
   - flexbox
   - my skills with more complex layouts.
